@@ -1,0 +1,113 @@
+--Name: Kindra Bilodeau
+--File: Animal Shelter Database
+--Date: March 2nd 
+create database AnimalShelter;
+
+use AnimalShelter; 
+
+Drop table if exists Animals; 
+
+Create table Animals (
+AnimalID varchar(20) primary key, 
+Animanlname text, 
+Species text not null, 
+Breed text,
+Age int, 
+Color text, 
+Sex text not null 
+);
+
+Drop table if exists Employees; 
+
+create table Employees (
+EmployeeID varchar(20) primary key, 
+EmplName text not null, 
+hiredate date not null, 
+contactnumber varchar(30) not null,
+Empladdress varchar(50) not null
+);
+
+drop table if exists Medical;
+
+create table Medical (
+AnimalID varchar(20) primary key,
+NeutSpay text,
+HealthCondition text, 
+Medication text, 
+Diet text, 
+Exercise text 
+); 
+
+drop table if exists Vaccines; 
+
+create table Vaccines (
+VaccineID int primary key , 
+Vacname text,
+);
+
+drop table if exists Calender; 
+
+create table Calender (
+EmployeeID varchar(20) primary key, 
+EventDate date not null,
+EventName text not null,
+Notes text
+);
+
+drop table if exists Adoption; 
+
+create table Adoption ( 
+AdoptionID int primary key, 
+AnimalID varchar(20) not null FOREIGN KEY REFERENCES Animals(AnimalID), 
+ClientID varchar(20) not null FOREIGN KEY REFERENCES Client(ClientID), 
+Dateadopted date not null, 
+Notes text
+);
+
+drop table if exists Fosters; 
+
+create table Fosters ( 
+FosterID int primary key, 
+AnimalID varchar(20) not null FOREIGN KEY REFERENCES Animals(AnimalID), 
+ClientID varchar(20) not null FOREIGN KEY REFERENCES Client(ClientID), 
+EmployeeID varchar(20) not null, 
+DateFostered date, 
+Notes text 
+); 
+
+drop table if exists Client; 
+
+create table Client (
+ClientID varchar(20) primary key, 
+ClientName text not null, 
+Contactnumber varchar(30) not null, 
+Clientaddress varchar(50) not null
+); 
+
+drop table if exists Payment; 
+
+create table Payment (
+InvoiceID int primary key, 
+ClientID varchar(20) not null FOREIGN KEY REFERENCES Client(ClientID), 
+PaymentDate date not null, 
+PaymentType varchar(75), 
+Cardnumber varchar(75)
+);
+
+drop table if exists Donation; 
+
+create table Donation (
+DonationID int primary key, 
+ClientID varchar(20) not null FOREIGN KEY REFERENCES Client(ClientID), 
+Amount money not null,
+DonateDate date 
+); 
+
+drop table if exists Service; 
+
+create table Service (
+ServiceID int primary key, 
+EmployeeID varchar(20) not null FOREIGN KEY REFERENCES Employees(EmployeeID), 
+ServiceName text, 
+Cost money
+);

@@ -1,0 +1,22 @@
+--Name: Kindra Bilodeau
+--File: Project Step 7 Queries
+--Date: March 2
+
+Use AnimalShelter; 
+
+select * from VaccinatedAnimals order by animalid;
+
+--Animals that have been adopted 
+select a.AnimalID, a.AnimalName from animals a join 
+Adoption aa on a.AnimalID = aa.AnimalID;
+
+
+--Animals that have the rabies vaccine
+select a.AnimalID, a.AnimalName, v.Vacname from animals a 
+join VaccinatedAnimals va on a.AnimalID = va.AnimalID join Vaccines v
+on v.VaccineID = va.VaccineID where v.vaccineid = 1; 
+
+
+--Which client made donations and for how much
+select c.clientid, c.clientname, d.amount from client c join 
+Donation d on c.clientid = d.ClientID;

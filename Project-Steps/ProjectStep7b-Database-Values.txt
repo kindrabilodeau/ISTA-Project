@@ -1,0 +1,134 @@
+use AnimalShelter; 
+--Animal Data 
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('DG01', 'Biscut', 'Dog', 'Beagle', 8,' Brown and White', 'Male'); 
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('DG02', 'Pickles', 'Dog', 'Pug', 2,' Tan', 'Male');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('DG03', 'Roxy', 'Dog', 'German Shepard', 5,' Black and Tan', 'Female');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('DG04', 'Sassy', 'Dog', 'Border Collie', 8,'Black', 'Female');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('DG05', 'Penny', 'Dog', 'Pitbull', 5,'Gray', 'Female');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('DG06', 'Buddy', 'Dog', 'Boxer', 6,'Brindle', 'Male');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('DG07', 'Bear', 'Dog', 'Boxer', 6,'Brindle', 'Male');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('CT01', 'Toby', 'Cat', 'Tabby', 1,'Orange', 'Male');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('CT02', 'Charlotte', 'Cat', 'Persian', 12,'White', 'Female');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('CT03', 'Oreo', 'Cat', 'Scottish Fold', 7,'Black and White', 'Male');
+insert into Animals(AnimalID, Animanlname, Species, Breed, Age, Color, Sex)
+values('BD01', 'Jimmy', 'Bird', 'Parrot', 3,'Ranibow', 'Male');
+insert into Animals(AnimalID, Animanlname, Species, Age, Color, Sex)
+values('GT01', 'Chewy', 'Goat', 5,'White', 'Male');
+
+--Employee Data
+Insert into Employees(EmployeeID, EmplName, hiredate, contactnumber, empladdress)
+values('EP01', 'Larry', '10/28/2016', '557-889-5458', '12 st. Georgia')
+Insert into Employees(EmployeeID, EmplName, hiredate, contactnumber, empladdress)
+values('EP02', 'Margo', '12/01/2017', '867-5309', '568 Main st. Georgia')
+
+--Medical Data
+Insert into Medical(AnimalID, NeutSpay, HealthCondition, Medication, Diet, Exercise)
+values('DG01', 'Neutered', 'Deaf', 'Flea Prevention', 'Hard Dog Food', 'Moderate')
+Insert into Medical(AnimalID, NeutSpay, HealthCondition, Medication, Diet)
+values('CT03', 'Neutered', 'Diabetes', 'Insulin', 'Soft,')
+Insert into Medical(AnimalID, NeutSpay, HealthCondition, Medication, Exercise)
+values('DG03', 'Spayed', 'Dry Eye', 'Eye Drops', 'Moderate')
+Insert into Medical(AnimalID, NeutSpay, HealthCondition, Medication, Diet, Exercise)
+values('DG07', 'Neutered', 'Ringworm', 'Dewormer', 'Hard Dog Food', 'Low')
+Insert into Medical(AnimalID, HealthCondition, Medication, Diet)
+values('GT01', 'HeartBurn',  'Pepto', 'Veggies')
+
+--Vaccines 
+insert into vaccines(VaccineID, Vacname)
+values(01, 'Rabies')
+insert into vaccines(VaccineID, Vacname)
+values(02, 'Parvo')
+insert into vaccines(VaccineID, Vacname)
+values(03, 'Hearworm Prevention')
+insert into vaccines(VaccineID, Vacname)
+values(04, 'Flea Prevention')
+insert into vaccines(VaccineID, Vacname)
+values(05, 'Distemper')
+insert into vaccines(VaccineID, Vacname)
+values(06, 'Kennel Cough')
+insert into vaccines(VaccineID, Vacname)
+values(07, 'Leptospirosis')
+insert into vaccines(VaccineID, Vacname)
+values(08, 'Feline Leukemia')
+insert into vaccines(VaccineID, Vacname)
+values(09, 'Feline Distemper')
+insert into vaccines(VaccineID, Vacname)
+values(10, 'Parainfluenza')
+insert into vaccines(VaccineID, Vacname)
+values(11, 'CD & T')
+insert into vaccines(VaccineID, Vacname)
+values(12, 'Polymarvirus')
+
+--Clients
+insert into Client(ClientID, ClientName, Contactnumber, Clientaddress)
+values('CT01', 'Ron Swanson', '254-581-4475', '1st St. Georgia')
+insert into Client(ClientID, ClientName, Contactnumber, Clientaddress)
+values('CT02', 'April Ludgate', '225-558-6698', 'Main St. Georgia')
+insert into Client(ClientID, ClientName, Contactnumber, Clientaddress)
+values('CT03', 'Andy Dywer', '225-558-6698', '10th St. Georgia')
+insert into Client(ClientID, ClientName, Contactnumber, Clientaddress)
+values('CT04', 'Leslie Knope', '225-558-6698', '3695 Half Lane Georgia')
+
+--Payments
+insert into Payment(InvoiceID, ClientID, PaymentDate, PaymentType)
+values(1200, 'CT01', '04/15/2018', 'Cash')
+insert into Payment(InvoiceID, ClientID, PaymentDate, PaymentType, Cardnumber)
+values(1201, 'CT02', '10/26/2018', 'Card', '5847396542')
+insert into Payment(InvoiceID, ClientID, PaymentDate, PaymentType, Cardnumber)
+values(1202, 'CT04', '02/10/2017', 'Card', '2652544742')
+insert into Payment(InvoiceID, ClientID, PaymentDate, PaymentType)
+values(1203, 'CT03', '06/30/2018', 'Cash')
+insert into Payment(InvoiceID, ClientID, PaymentDate, PaymentType, Cardnumber)
+values(1204, 'CT01', '11/01/2018', 'Card', '3625254552')
+
+--Donations
+insert into Donation(DonationID, ClientID, Amount, DonateDate)
+values(2501, 'CT04', 1200.00, '03/01/2018')
+insert into Donation(DonationID, ClientID, Amount, DonateDate)
+values(2502, 'CT03', 3500.15, '05/09/2018')
+insert into Donation(DonationID, ClientID, Amount, DonateDate)
+values(2503, 'CT01', 15.00, '09/16/2018')
+
+--Services
+insert into Service(ServiceID, EmployeeID, ServiceName, Cost)
+values(3801, 'EP01', 'Bath', 20.00)
+insert into Service(ServiceID, EmployeeID, ServiceName, Cost)
+values(3802, 'EP01', 'Nail Trim', 5.00)
+insert into Service(ServiceID, EmployeeID, ServiceName, Cost)
+values(3803, 'EP01', 'Shave', 30.00)
+insert into Service(ServiceID, EmployeeID, ServiceName, Cost)
+values(3804, 'EP01', 'Nail File', 7.00)
+insert into Service(ServiceID, EmployeeID, ServiceName, Cost)
+values(3805, 'EP02', 'Bording', 50.00)
+insert into Service(ServiceID, EmployeeID, ServiceName, Cost)
+values(3806, 'EP02', 'Administer Medication', 5.00)
+insert into Service(ServiceID, EmployeeID, ServiceName, Cost)
+values(3807, 'EP02', 'Pool Time', 20.00)
+
+--Shelter Events 
+insert into Calender(EmployeeID, EventDate, EventName, Notes)
+values('EP02', '05/25/2018', 'Annual Shelter 5K', 'Cost $10.00')
+insert into Calender(EmployeeID, EventDate, EventName)
+values('EP01', '06/02/2018', 'Adoption Event!')
+
+--Adoption data
+insert into Adoption(AdoptionId, AnimalId, ClientID, Dateadopted)
+values(4200, 'DG02', 'CT04', '04/04/2018')
+insert into Adoption(AdoptionId, AnimalId, ClientID, Dateadopted)
+values(4201, 'CT03', 'CT03', '08/21/2018')
+
+--Foster Data
+insert into Fosters(FosterID, AnimalID, ClientID, EmployeeID, DateFostered, Notes)
+values(5400, 'DG06', 'CT02', 'EP02', '02/13/2018', 'Doing Well')
+insert into Fosters(FosterID, AnimalID, ClientID, EmployeeID, DateFostered, Notes)
+values(5401, 'DG07', 'CT02', 'EP02', '02/13/2018', 'Doing Well')
