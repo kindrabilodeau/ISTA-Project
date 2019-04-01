@@ -40,6 +40,12 @@ RAT: Allow a user to browse services and book appointments.
 DEP: FR1
 
 ID:FR7
+Title: Pay a bill
+DESC: The user should be able to click on their account and pay their bill. With the credit card information either they need to input
+RAT: Pay a bill
+DEP:FR1 
+
+ID:FR7
 Title: Events Calendar
 DESC: A user should be able to select the calendar and view events that are going on in the shelter. If there is an event that a user wants to attend, the user can register from the calendar page.
 RAT: Allow a user to view shelter events
